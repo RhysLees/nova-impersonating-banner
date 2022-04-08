@@ -1,0 +1,29 @@
+{
+    "name": "rhyslees/nova-impersonating-banner",
+    "description": "An impersonating banner for Nova 4",
+    "license": "MIT",
+    "repositories": {
+        "nova": {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^9.0",
+        "laravel/nova": "^4.0",
+        "livewire/livewire": "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "RhysLees\\NovaImpersonatingBanner\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RhysLees\\NovaImpersonatingBanner\\NovaImpersonatingBannerServiceProvider"
+            ]
+        }
+    }
+}
