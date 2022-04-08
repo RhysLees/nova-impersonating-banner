@@ -1,5 +1,12 @@
 # Nova Impersonating Banner
 
+1. Displays a banner when impersonating
+2. Allows you to stop impersonating
+
+
+![image](https://user-images.githubusercontent.com/43909932/162441854-e376a3f8-fd71-4485-abac-cba7c0447c51.png)
+
+
 ## Installation
 
 Require this package with composer.
