@@ -8,13 +8,16 @@ Require this package with composer.
 composer require rhyslees/nova-impersonating-banner
 ```
 
-
-## Customisation
-
-To customise the banner publish the 
 ```shell
 php artisan vendor:publish --provider="RhysLees\NovaImpersonatingBanner\NovaImpersonatingBannerServiceProvider" --tag="views"
 ```
+
+```shell
+npm install && npm run development
+```
+
+
+## Customisation
 
 The user you are impersonating is passed into the livewire component as `$impersonating` so you can select what information you wish to show to the user
 
