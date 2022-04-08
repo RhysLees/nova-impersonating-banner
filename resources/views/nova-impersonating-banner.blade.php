@@ -1,6 +1,6 @@
 <div>
     @if ($isImpersonating)
-        <div class="items-center justify-center w-full p-2 mx-8 text-center text-white bg-red-600 md:flex">
+        <div class="items-center justify-center w-full p-2 text-center text-white bg-red-600 md:flex">
             <p class="text-lg">You are impersonating</p>
 
             <div class="flex-grow">
