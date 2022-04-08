@@ -20,7 +20,7 @@ class NovaImpersonatingBannerServiceProvider extends ServiceProvider
         // Publish views
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/nova-impersonating-banner'),
-        ], 'nova-impersonating-banner');
+        ], 'views');
         }
     }
 
