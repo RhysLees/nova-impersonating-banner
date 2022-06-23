@@ -24,7 +24,7 @@ npm install && npm run development
 ```
 
 ## Displaying the component
-Add the following livewire component to your layouts `app.blade.php` and `guest.blade.php` above the deader
+Add the following livewire component to your layouts `app.blade.php` and `guest.blade.php` above the header
 
 ```html
 @livewire('nova-impersonating-banner')
