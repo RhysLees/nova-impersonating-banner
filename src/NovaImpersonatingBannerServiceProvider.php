@@ -4,6 +4,7 @@ namespace RhysLees\NovaImpersonatingBanner;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
+use RhysLees\NovaAbout\NovaAbout;
 use RhysLees\NovaImpersonatingBanner\Livewire\NovaImpersonatingBanner;
 
 class NovaImpersonatingBannerServiceProvider extends ServiceProvider
@@ -28,6 +29,9 @@ class NovaImpersonatingBannerServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../config/nova-impersonating-banner.php' => config_path('nova-impersonating-banner.php'),
             ], 'config');
+
+            // Add package to Nova About
+            NovaAbout::addPackage('rhylees/nova-impersonating-banner');
         }
     }
 
