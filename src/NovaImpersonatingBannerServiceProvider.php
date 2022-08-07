@@ -31,7 +31,7 @@ class NovaImpersonatingBannerServiceProvider extends ServiceProvider
             ], 'config');
 
             // Add package to Nova About
-            NovaAbout::addPackage('rhylees/nova-impersonating-banner');
+            NovaAbout::addPackage('rhyslees/nova-impersonating-banner');
         }
     }
 
