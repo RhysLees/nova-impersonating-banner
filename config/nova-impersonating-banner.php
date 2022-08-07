@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'redirect_url' => request()->header('Referer'),
+    'redirect_url' => null,
 ];
