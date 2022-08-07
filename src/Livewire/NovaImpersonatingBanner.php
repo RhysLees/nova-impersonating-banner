@@ -3,23 +3,24 @@
 namespace RhysLees\NovaImpersonatingBanner\Livewire;
 
 use App\Models\User;
-use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Nova\Contracts\ImpersonatesUsers;
+use Livewire\Component;
 
 class NovaImpersonatingBanner extends Component
 {
     public $isImpersonating = false;
+
     public $impersonating;
 
     public function mount()
     {
         $impersonating = app(ImpersonatesUsers::class)->impersonating(request());
 
-        if($impersonating){
+        if ($impersonating) {
             $this->isImpersonating = true;
             $this->impersonating = Auth::user();
-        }else{
+        } else {
             $this->isImpersonating = false;
         }
     }
@@ -33,6 +34,6 @@ class NovaImpersonatingBanner extends Component
     {
         app(ImpersonatesUsers::class)->stopImpersonating(request(), Auth::guard('web'), User::class);
 
-        return redirect(request()->header('Referer'));
+        return redirect(config('nova-impersonating-banner.redirect_url', request()->header('Referer')));
     }
 }

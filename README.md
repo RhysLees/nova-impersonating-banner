@@ -16,7 +16,7 @@ composer require rhyslees/nova-impersonating-banner
 ```
 
 ```shell
-php artisan vendor:publish --provider="RhysLees\NovaImpersonatingBanner\NovaImpersonatingBannerServiceProvider" --tag="views"
+php artisan vendor:publish --provider="RhysLees\NovaImpersonatingBanner\NovaImpersonatingBannerServiceProvider"
 ```
 
 ```shell
@@ -86,4 +86,10 @@ The user you are impersonating is passed into the livewire component as `$impers
   <p class="text-sm">{{ $impersonating->id }} - {{ $impersonating->name }}</p>
   <p class="text-sm">{{ $impersonating->email }}</p>
 </div>
+```
+
+To change the redirect url when you stop impersonating, you can edit the config file `config/nova-impersonating-banner.php`
+
+```php
+'redirect_url' => '/nova',
 ```
