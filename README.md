@@ -7,6 +7,12 @@
 ![image](https://user-images.githubusercontent.com/43909932/162441854-e376a3f8-fd71-4485-abac-cba7c0447c51.png)
 
 
+## Prerequisites
+
+Ensure you are using the `web` middleware on your routes.
+Enqure you have read the [Nova Impersonation Docs](https://nova.laravel.com/docs/4.0/customization/impersonation.html)
+
+
 ## Installation
 
 Require this package with composer.
