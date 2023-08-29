@@ -20,20 +20,22 @@ Require this package with composer.
 ```shell
 composer require rhyslees/nova-impersonating-banner
 ```
-
 ```shell
 php artisan vendor:publish --provider="RhysLees\NovaImpersonatingBanner\NovaImpersonatingBannerServiceProvider"
 ```
 
 ```shell
-npm install && npm run development
+npm install && npm run build
 ```
 
 ## Displaying the component
-Add the following livewire component to your layouts `app.blade.php` and `guest.blade.php` above the header
-
+Add the following livewire component to your layouts `app.blade.php` and `guest.blade.php`
 ```html
 @livewire('nova-impersonating-banner')
+```
+or
+```html
+<livewire:nova-impersonating-banner />
 ```
 
 ### App Layout `app.blade.php`
@@ -50,26 +52,7 @@ Add the following livewire component to your layouts `app.blade.php` and `guest.
 ```
 
 ### Guest Layout `guest.blade.php`
-For this to work on your guest layout, you will need to add `@livewireStyles` into the head of your guest layout and `@livewireScripts` just above the closing tag of your body
 
-```html
-<!-- Styles -->
-<link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-@livewireStyles
-
-...
-```
-
-```html
-...
-
-        @livewireScripts
-
-    </body>
-</html>
-```
-Then you can add the component into the `guest.blade.php`
 ```html
 <body>
   <div class="font-sans text-gray-900 antialiased">
@@ -79,9 +62,6 @@ Then you can add the component into the `guest.blade.php`
     
 ...
 ```
-
-
-
 
 ## Customisation
 
@@ -94,8 +74,22 @@ The user you are impersonating is passed into the livewire component as `$impers
 </div>
 ```
 
-To change the redirect url when you stop impersonating, you can edit the config file `config/nova-impersonating-banner.php`
+To change the redirect url when you stop impersonating, you can edit the config file `config/nova.php`
 
 ```php
-'redirect_url' => '/nova',
+/*
+|--------------------------------------------------------------------------
+| Nova Impersonation Redirection URLs
+|--------------------------------------------------------------------------
+|
+| This configuration option allows you to specify a URL where Nova should
+| redirect an administrator after impersonating another user and a URL
+| to redirect the administrator after stopping impersonating a user.
+|
+*/
+
+'impersonation' => [
+    'started' => '/',
+    'stopped' => '/',
+],
 ```

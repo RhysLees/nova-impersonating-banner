@@ -9,15 +9,13 @@ use Livewire\Component;
 
 class NovaImpersonatingBanner extends Component
 {
-    public $isImpersonating = false;
+    public bool $isImpersonating = false;
 
-    public $impersonating;
+    public mixed $impersonating;
 
     public function mount()
     {
-        $impersonating = app(ImpersonatesUsers::class)->impersonating(request());
-
-        if ($impersonating) {
+        if (app(ImpersonatesUsers::class)->impersonating(request())) {
             $this->isImpersonating = true;
             $this->impersonating = Auth::user();
         } else {
@@ -32,8 +30,11 @@ class NovaImpersonatingBanner extends Component
 
     public function stopImpersonating()
     {
-        app(ImpersonatesUsers::class)->stopImpersonating(request(), Auth::guard('web'), User::class);
+        app(ImpersonatesUsers::class)
+            ->stopImpersonating(request(), Auth::guard('web'), User::class);
 
-        return redirect(config('nova-impersonating-banner.redirect_url', request()->header('Referer')));
+        ray('stopImpersonating');
+
+        return redirect(config('nova.impersonation.stopped', request()->header('Referer')));
     }
 }

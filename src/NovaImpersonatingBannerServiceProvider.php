@@ -14,9 +14,6 @@ class NovaImpersonatingBannerServiceProvider extends ServiceProvider
         // Load views
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-impersonating-banner');
 
-        // Load config
-        $this->mergeConfigFrom(__DIR__.'/../config/nova-impersonating-banner.php', 'nova-impersonating-banner');
-
         Livewire::component('nova-impersonating-banner', NovaImpersonatingBanner::class);
 
         if ($this->app->runningInConsole()) {
@@ -25,18 +22,8 @@ class NovaImpersonatingBannerServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views' => resource_path('views/vendor/nova-impersonating-banner'),
             ], 'views');
 
-            // Puchlish config
-            $this->publishes([
-                __DIR__.'/../config/nova-impersonating-banner.php' => config_path('nova-impersonating-banner.php'),
-            ], 'config');
-
             // Add package to Nova About
             NovaAbout::addPackage('rhyslees/nova-impersonating-banner');
         }
-    }
-
-    public function register()
-    {
-        //
     }
 }
