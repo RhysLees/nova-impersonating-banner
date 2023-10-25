@@ -33,8 +33,6 @@ class NovaImpersonatingBanner extends Component
         app(ImpersonatesUsers::class)
             ->stopImpersonating(request(), Auth::guard('web'), User::class);
 
-        ray('stopImpersonating');
-
         return redirect(config('nova.impersonation.stopped', request()->header('Referer')));
     }
 }
