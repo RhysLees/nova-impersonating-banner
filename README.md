@@ -10,7 +10,7 @@
 ## Prerequisites
 
 Ensure you are using the `web` middleware on your routes.
-Enqure you have read the [Nova Impersonation Docs](https://nova.laravel.com/docs/4.0/customization/impersonation.html)
+Ensure you have read the [Nova Impersonation Docs](https://nova.laravel.com/docs/4.0/customization/impersonation.html)
 
 
 ## Installation
