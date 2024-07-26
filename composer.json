@@ -10,7 +10,7 @@
     },
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^10.0",
+        "laravel/framework": "^10.0|^11.0",
         "laravel/nova": "^4.0",
         "livewire/livewire": "^3.0",
         "rhyslees/nova-about": "^2.0"
